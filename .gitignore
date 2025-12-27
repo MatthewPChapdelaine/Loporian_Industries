@@ -1,0 +1,44 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.env
+.env.*
+
+# Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Build
+dist/
+build/
+
+# Archives
+*.tar.gz
+*.zip
+
+# Misc
+*.swp
+*.swo
