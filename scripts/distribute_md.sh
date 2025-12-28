@@ -1,3 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Write a Combinatorial_Visual_Design_Engine.md into every directory under the given root
+# Usage: ./scripts/distribute_md.sh [repo-root]
+
+ROOT=${1:-$(pwd)}
+OUTNAME=Combinatorial_Visual_Design_Engine.md
+
+TEMPLATE=$(cat <<'MD'
 # Combinatorial Visual Design Engine
 
 ---
@@ -28,3 +38,14 @@ cd /workspaces/Loporian_Industries
 ```
 
 If you want me to run the script and push the resulting files, run the commands above in your environment and then tell me the git output so I can help finalize the push.
+MD
+)
+
+echo "Writing $OUTNAME into every directory under $ROOT..."
+count=0
+while IFS= read -r -d '' dir; do
+  printf "%s\n" "$TEMPLATE" >"$dir/$OUTNAME"
+  count=$((count+1))
+done < <(find "$ROOT" -type d -print0)
+
+echo "Done: wrote $OUTNAME into $count directories."
