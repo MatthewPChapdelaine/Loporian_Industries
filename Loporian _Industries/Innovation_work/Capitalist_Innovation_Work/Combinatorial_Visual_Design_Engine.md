@@ -1,8 +1,8 @@
-# Combinatorial Visual Design Engine
+# Combinatorial Visual Design Engine for Comic Books
 
----
+Executive Summary
 
-**Original article:** [Combinatorial Visual Design Engine](https://matthewpchapdelaine.substack.com/p/combinatorial-visual-design-engine)
+A fractal, rule-governed design system that generates visual reference materials across all scales of comic book creation—from narrative structure and scene composition down to individual visual elements.
 
 > Local copy placeholder.
 
