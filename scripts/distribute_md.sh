@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Write a Combinatorial_Visual_Design_Engine.md into every directory under the given root
+# Overwrite or create Combinatorial_Visual_Design_Engine.md into every directory under the given root
 # Usage: ./scripts/distribute_md.sh [repo-root]
 
 ROOT=${1:-$(pwd)}
@@ -41,11 +41,12 @@ If you want me to run the script and push the resulting files, run the commands 
 MD
 )
 
-echo "Writing $OUTNAME into every directory under $ROOT..."
+# Write the template into every directory
+printf "Writing $OUTNAME into every directory under %s\n" "$ROOT"
 count=0
 while IFS= read -r -d '' dir; do
   printf "%s\n" "$TEMPLATE" >"$dir/$OUTNAME"
   count=$((count+1))
 done < <(find "$ROOT" -type d -print0)
 
-echo "Done: wrote $OUTNAME into $count directories."
+printf "Done: wrote %d files.\n" "$count"
